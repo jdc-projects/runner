@@ -22,3 +22,4 @@ ARG YQ_BINARY=linux_amd64
 RUN curl -Lo yq_${YQ_BINARY}.tar.gz https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_${YQ_BINARY}.tar.gz
 RUN tar -xzf yq_${YQ_BINARY}.tar.gz
 RUN sudo mv ./yq_${YQ_BINARY} /usr/bin/yq
+RUN rm yq*
