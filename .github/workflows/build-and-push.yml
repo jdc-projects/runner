@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Check version is valid
-        run: docker manifest inpsect ${{ env.BASE_IMAGE }}:${{ inputs.version }}
+        run: docker manifest inspect ${{ env.BASE_IMAGE }}:${{ inputs.version }}
 
   build-and-push:
     needs: [
