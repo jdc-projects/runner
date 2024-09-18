@@ -12,13 +12,13 @@ RUN sudo apt install -y --no-install-recommends unzip curl git
 ARG NODE_VERSION=20
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o nodesource_setup.sh
 RUN sudo bash nodesource_setup.sh
-RUN sudo rm nodesource_setup.sh
+RUN rm nodesource_setup.sh
 RUN sudo apt install -y --no-install-recommends nodejs
 
 # install yq
 # note: the PPA in the docs is very out of date, so we don't use it
 ARG YQ_VERSION=v4.44.3
 ARG YQ_BINARY=linux_amd64
-RUN sudo curl -Lo yq_${YQ_BINARY}.tar.gz https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_${YQ_BINARY}.tar.gz
-RUN sudo tar -xzf yq_${YQ_BINARY}.tar.gz
+RUN curl -Lo yq_${YQ_BINARY}.tar.gz https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_${YQ_BINARY}.tar.gz
+RUN tar -xzf yq_${YQ_BINARY}.tar.gz
 RUN sudo mv ./yq_${YQ_BINARY} /usr/bin/yq
