@@ -23,3 +23,7 @@ RUN curl -Lo yq_${YQ_BINARY}.tar.gz https://github.com/mikefarah/yq/releases/dow
 RUN tar -xzf yq_${YQ_BINARY}.tar.gz
 RUN sudo mv ./yq_${YQ_BINARY} /usr/bin/yq
 RUN rm yq*
+
+# shouldn't be needed, but tidy up with apt, just in case
+RUN sudo apt autoremove -y
+RUN sudo apt autoclean -y
