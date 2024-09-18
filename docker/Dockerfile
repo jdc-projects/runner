@@ -1,4 +1,6 @@
-FROM ghcr.io/actions/actions-runner:2.319.1
+ARG BASE_IMAGE
+
+FROM ${BASE_IMAGE}
 
 # install some basic tools - can be removed once https://github.com/actions/runner/pull/3056 is included in a release
 RUN sudo apt update
