@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=ghcr.io/actions/actions-runner:2.324.0
+ARG BASE_IMAGE=ghcr.io/actions/actions-runner:2.333.1
 
 FROM ${BASE_IMAGE}
 
@@ -7,7 +7,7 @@ ARG NODE_VERSION=22
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o nodesource_setup.sh
 RUN sudo bash nodesource_setup.sh
 RUN rm nodesource_setup.sh
-RUN sudo apt install -y --no-install-recommends nodejs
+RUN sudo apt install -y --no-install-recommends nodejs gh
 
 # install yq
 # note: the PPA in the docs is very out of date, so we don't use it
