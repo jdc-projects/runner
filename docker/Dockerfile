@@ -7,7 +7,7 @@ ARG NODE_VERSION=22
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o nodesource_setup.sh
 RUN sudo bash nodesource_setup.sh
 RUN rm nodesource_setup.sh
-RUN sudo apt install -y --no-install-recommends nodejs gh
+RUN sudo apt install -y --no-install-recommends nodejs gh retry
 
 # install yq
 # note: the PPA in the docs is very out of date, so we don't use it
